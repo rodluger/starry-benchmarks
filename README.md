@@ -1,2 +1,2 @@
 # starry-benchmarks
-Benchmarks for starry
+Benchmarks for the [starry project](https://github.com/rodluger/starry).
