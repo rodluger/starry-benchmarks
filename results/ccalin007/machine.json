@@ -1,0 +1,8 @@
+{
+    "arch": "x86_64",
+    "cpu": "Intel(R) Xeon(R) Gold 6128 CPU @ 3.40GHz",
+    "machine": "ccalin007",
+    "os": "Linux 3.10.0-862.11.6.el7.x86_64",
+    "ram": "20GB",
+    "version": 1
+}
