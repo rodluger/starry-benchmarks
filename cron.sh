@@ -1,6 +1,9 @@
 #!/bin/bash -xe
 
 MACHINE=`python -c "from asv.machine import Machine; print(Machine.load('~/.asv-machine.json').machine)"`
+OPENBLAS_NUM_THREADS=1
+MKL_NUM_THREADS=1
+OMP_NUM_THREADS=1
 
 echo "asv: "`asv --version`
 echo "Machine: "$MACHINE
@@ -19,7 +22,7 @@ git pull origin master
 
 # On Linux - using taskset -c 0 ensures that the same core is always used when running the benchmarks.
 taskset -c 0 asv run NEW || true
-timeout 7200 taskset -c 0 asv run ALL --skip-existing-commits || true
+timeout 7200 taskset -c 0 asv run v0.2.1 --skip-existing-commits || true
 
 # On MacOSX:
 # asv run NEW || true
