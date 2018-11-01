@@ -4,7 +4,6 @@
 *.vscode
 starry/
 html/
-results/
 
 # Latex
 *.aux

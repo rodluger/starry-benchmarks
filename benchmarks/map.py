@@ -1,7 +1,9 @@
 import starry
 import starry.maps
 import numpy as np
-npts = 25
+npts = 100
+lmax_array = [2, 5, 10, 20, 30]
+nwav_array = [1, 10]
 
 
 class TimeIO:
@@ -9,7 +11,7 @@ class TimeIO:
     Timing suite for `starry` I/O operations.
 
     """
-    params = [[2, 10, 30], [1, 10]]
+    params = [lmax_array, nwav_array]
     param_names = ["lmax", "nwav"]
 
     @property
@@ -52,7 +54,7 @@ class TimeRotate:
     Timing suite for `starry` rotations.
 
     """
-    params = [[2, 10, 30], [1, 10], [[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]]]
+    params = [lmax_array, nwav_array, [[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]]]
     param_names = ["lmax", "nwav", "axis"]
 
     @property
@@ -76,7 +78,7 @@ class TimeEvaluate:
     Timing suite for `starry` map intensity evaluations.
 
     """
-    params = [[2, 10, 30], [1, 10]]
+    params = [lmax_array, nwav_array]
     param_names = ["lmax", "nwav"]
 
     @property
@@ -116,7 +118,7 @@ class TimePhaseCurve:
     Timing suite for `starry` phase curve evaluations.
 
     """
-    params = [[2, 10, 30], [1, 10], [[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]]]
+    params = [lmax_array, nwav_array, [[1, 0, 0], [0, 1, 0], [0, 0, 1], [1, 1, 1]]]
     param_names = ["lmax", "nwav", "axis"]
 
     @property
@@ -148,7 +150,7 @@ class TimeOccultation:
     Timing suite for `starry` flux evaluations.
 
     """
-    params = [[2, 10, 30], [1, 10], [0.1, 100], ["y", "u", "both"]]
+    params = [lmax_array, nwav_array, [0.1, 100], ["y", "u", "both"]]
     param_names = ["lmax", "nwav", "ro", "maptype"]
 
     @property
