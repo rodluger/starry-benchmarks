@@ -22,7 +22,7 @@ git pull origin master
 
 # On Linux - using taskset -c 0 ensures that the same core is always used when running the benchmarks.
 taskset -c 0 asv run NEW || true
-timeout 7200 taskset -c 0 asv run v0.2.1 --skip-existing-commits || true
+timeout 7200 taskset -c 0 asv run 426287169e44a510784f16d36994f639f1aa2388..HEAD^ --skip-existing-commits || true
 
 # On MacOSX:
 # asv run NEW || true
